@@ -1,0 +1,547 @@
+﻿@page
+@model Northwind.WebUI.Pages.PageOrdersModel
+@{
+    ViewData["Title"] = "Orders";
+
+
+}
+
+
+@*Para importar los styles aqui empienza*@
+@section styles{
+
+    <link rel="stylesheet" href="~/css/StylesOrders.css" />
+
+    <link href="~/lib/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+
+    @*Font Awesome CSS*@
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+}
+
+@*Para importar los styles aqui termina*@
+
+<body>
+
+    @*El titulo de la pages*@
+    <h1>New Orders</h1>
+
+    @*Para el formulario aqui empieza*@
+    <form method="post" id="OrderForm">
+        <div class="container">
+            <div class="row row-cols-4">
+
+
+                <div class="col">
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="InputCustomerID" name="InputCustomerID" placeholder="1 2 3">
+                        <label for="InputCustomerID">Customer ID</label>
+
+                        <div>
+                            <label class="invalid-feedback d-block" for="InputCustomerID"> </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="InputEmployeeID" name="InputEmployeeID" placeholder="1 2 3">
+                        <label for="InputEmployeeID">Employee ID</label>
+                        <div>
+                            <label class="invalid-feedback d-block" for="InputEmployeeID"> </label>
+                        </div>
+                       
+                    </div>
+
+
+                </div>
+
+                <div class="col">
+
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" id="OrderDate" name="OrderDate" placeholder="date">
+                        <label for="OrderDate">Order Date</label>
+                        <div>
+                            <label class="invalid-feedback d-block" for="OrderDate"> </label>
+                        </div>
+                        
+                    </div>
+
+
+
+                </div>
+
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" id="RequiredDate" name="RequiredDate" placeholder="date">
+                        <label for="RequiredDate">Required Date</label>
+                        <div>
+                            <label class="invalid-feedback d-block" for="RequiredDate"> </label>
+
+                        </div>
+                       
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container">
+            <div class="row row-cols-4">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" id="ShippedDate"name="ShippedDate" placeholder="date">
+                        <label for="ShippedDate">Shipped Date</label>
+                       
+
+                        <div>
+                            <label class="invalid-feedback d-block" for="ShippedDate"> </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="ShipVia" name="ShipVia" placeholder="text">
+                        <label for="ShipVia">Ship Via</label>
+
+                        <div>
+                            <label class="invalid-feedback d-block" for="ShipVia"> </label>
+                        </div>
+                       
+                    </div>
+
+
+                </div>
+
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="Freight" name="Freight" placeholder="text">
+                        <label for="Freight">Freight</label>
+                        <div>
+                            <label class="invalid-feedback d-block" for="Freight"> </label>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="ShipName"  name="ShipName" placeholder="text">
+                        <label for="ShipName">Ship Name</label>
+
+                        <div>
+                            <label class="invalid-feedback d-block" for="ShipName"> </label>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col">
+
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="inputShipCountry" name="inputShipCountry" placeholder="text">
+                        <label for="inputShipCountry" class="form-label">Ship Country</label>
+
+
+                        <div>
+                            <label class="invalid-feedback d-block" for="inputShipCountry"> </label>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="ShipCity"name="ShipCity" placeholder="text">
+                        <label for="ShipCity">Ship City</label>
+                        <di>
+                            <label class="invalid-feedback d-block" for="ShipCity"> </label>
+
+                        </di>
+                    </div>
+
+
+                </div>
+
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="ShipRegion" name="ShipRegion" placeholder="text">
+                        <label for="ShipRegion">Ship Region</label>
+                        <div>
+                            <label class="invalid-feedback d-block" for="ShipRegion"> </label>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col">
+
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="ShipAddress" name="ShipAddress" placeholder="1234 Main St">
+                        <label for="ShipAddress">Ship Address</label>
+                        <div>
+                            <label class="invalid-feedback d-block" for="ShipAddress"> </label>
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="col">
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="ShipPostalCode" name="ShipPostalCode" placeholder="text">
+                        <label for="ShipPostalCode">Ship Postal Code</label>
+                        <div>
+                            <label class="invalid-feedback d-block" for="ShipPostalCode"> </label>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+            </div>
+
+            @*Boton cancel y save Formulario aqui empieza*@
+            <div class="row">
+                <div class="col-xs-12">
+
+
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            &nbsp;
+                            <div class="pull-right">
+
+
+
+                                <button type="submit" class="btn btn-labeled btn-success">
+                                    <span class="btn-label"><i class="fa fa-check"></i></span>Save order
+                                </button>
+
+
+                                <button type="reset" class="btn btn-labeled btn-danger" id="btn-cancelar">
+                                    <span class="btn-label"><i class="fa fa-remove"></i></span>Cancel order
+                                </button>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*Boton cancel y save Formulario aqui termina*@
+
+
+
+
+
+        </div>
+
+    </form>
+    @*Para el formulario aqui termina*@
+
+
+    @* Contenedor de la table customer y employee en columna una a la derecha y otra a la izquierda
+        aqui empieza*@
+    <div class="container px-4">
+        <div class="row gx-5">
+
+            @*Para agregar new customer*@
+            <div>
+
+                <button type="button" class="btn btn-primary" id="NewCustomerButton">Add</button>
+
+            </div>
+
+            @*Columna que contiene la table de customer aqui empieza*@
+            <div class="col" id="wrapper-content-customer">
+
+                <div class="p-3 border bg-light">
+                    @*Table de customer aqui empieza *@
+                    <table class="table" id="customer-table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th class="ColmCustomerID">Customer ID</th>
+                                <th class="ColmCountry">Country</th>
+                                <th class="ColmCity">City</th>
+                                <th class="ColmRegion">Region</th>
+                                <th class="ColmAddress">Address ID</th>
+                                <th class="ColmPostalCode">Postal code</th>
+                                <th class="ColmPhone">Phone</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+
+
+                            <div>
+                                <h4>Customer</h4>
+                            </div>
+
+
+                        </tbody>
+                    </table>
+                    @*Table de customer aqui termina *@
+
+                    @*Para los elmentos customer de la columna probar*@
+                    <div id="wrapper-content-customer">
+                        <table class="table " id="customer-table">
+                            <tbody>
+                                @for (int i = 0; i <= 10; i++)
+                                {
+                                    <tr data-id="@i">
+
+                                        <td class="ColmCustomerID">@i</td>
+                                        <td class="ColmShipCountry">Brazil @i</td>
+                                        <td class="ColmShipCity">Reims  @i</td>
+                                        <td class="ColmShipRegion">Táchira @i</td>
+                                        <td class="ColmShipAddress">59 rue de l'Abbaye @i</td>
+                                        <td class="ColmPostalCode">44087 @i</td>
+                                        <td class="ColmPhone">829-879-6977 @i</td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    @*aqui termina para los elementos customer de la columna*@
+                </div>
+            </div>
+            @*Columna que contiene la table de customer aqui termina*@
+
+
+            @*Columna que contiene la table de employee aqui empieza*@
+            <div class="col">
+
+                <div class="p-3 border bg-light" id="wrapper-content-employee">
+                    @*Table de customer aqui empieza *@
+                    <table class="table" id="employee-table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th class="ColmEmployeeID">Employee ID</th>
+                                <th class="ColmLastName">Last name</th>
+                                <th class="ColmFirstName">First name</th>
+                                <th class="ColmTitleCourtesy">Title of courtesy</th>
+                                <th class="ColmTitle">Title</th>
+
+                            </tr>
+
+                        </thead>
+                        <tbody>
+
+                            <div>
+                                <h4>Employee</h4>
+                            </div>
+
+
+                        </tbody>
+                    </table>
+                    @*Table de customer aqui termina *@
+
+                    @*Para los elmentos de employees de la columna probar*@
+                    <div id="wrapper-content-employee">
+                        <table class="table" id="employee-table">
+                            <tbody>
+                                @for (int i = 0; i <= 10; i++)
+                                {
+                                    <tr data-id="@i">
+
+                                        <td class="ColmEmployeeID">@i</td>
+                                        <td class="ColmLastName">Davolio @i</td>
+                                        <td class="ColmFirstName">Nancy @i</td>
+
+                                        <td class="ColmTitle">Sales Representative @i</td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    @*aqui termina para los elementos employee de la columna*@
+
+
+
+
+
+
+                </div>
+            </div>
+            @*aqui termina la parte de la table de employee*@
+
+
+
+        </div>
+
+
+    </div>
+    @* Contenedor de la table customer y employee en columna una a la derecha y otra a la izquierda
+        aqui termina*@
+
+
+
+</body>
+
+
+
+
+
+
+@*Para los scripts aqui empienza*@
+@section scripts{
+
+    <!-- aqui establezco mi modal para agregar un customer-->
+    <div class="modal fade" id="NewCustomerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    @*formulario para new customer aqui empieza*@
+                    <form class="row g-3" id="CustomerFormModal" method="post">
+
+                        <div class="col-md-6">
+                            <label for="InputCompanyName" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="InputCompanyName" name="InputCompanyName">
+                            <label class="invalid-feedback d-block" for="InputCompanyName"> </label>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="InputContactName" class="form-label">Contact Name</label>
+                            <input type="text" class="form-control" id="InputContactName" name="InputContactName">
+                            <label class="invalid-feedback d-block" for="InputContactName"> </label>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="InputContactTitle" class="form-label">Contact Title</label>
+                            <input type="text" class="form-control" id="InputContactTitle" name="InputContactTitle">
+                            <label class="invalid-feedback d-block" for="InputContactTitle"> </label>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="InputPhone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="InputPhone" name="InputPhone">
+                            <label class="invalid-feedback d-block" for="InputPhone"> </label>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="InputFax" class="form-label">Fax</label>
+                            <input type="text" class="form-control" id="InputFax" name="InputFax">
+
+                            <label class="invalid-feedback d-block" for="InputFax"> </label>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <label for="InputCountry" class="form-label">Country</label>
+                            <input type="text" class="form-control" id="InputCountry" name="InputCountry">
+                            <label class="invalid-feedback d-block" for="InputCountry"> </label>
+
+                        </div>
+
+
+                        <div class="col-12">
+                            <label for="InputAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="InputAddress" placeholder="1234 Main St" name="InputAddress">
+
+                            <label class="invalid-feedback d-block" for="InputAddress"> </label>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="InputCity" class="form-label">City</label>
+                            <input type="text" class="form-control" id="InputCity" name="InputCity">
+
+                            <label class="invalid-feedback d-block" for="InputCity"> </label>
+
+                        </div>
+
+
+
+                        <div class="col-md-4">
+                            <label for="InputRegion" class="form-label">Region</label>
+                            <input type="text" class="form-control" id="InputRegion" name="InputRegion">
+                     
+                            <label class="invalid-feedback d-block" for="InputRegion"> </label>
+
+
+                        </div>
+
+                        <div class="col-md-2">
+                            <label for="InputZip" class="form-label">Zip</label>
+                            <input type="text" class="form-control" id="InputZip" name="InputZip">
+                            <label class="invalid-feedback d-block" for="InputZip"> </label>
+
+                        </div>
+
+                        @*botones para el envio y cancelacion del formulario aqui empieza*@
+                        <div>
+
+                            <button type="reset" class="btn btn-danger">
+                                Cancel customer
+                            </button>
+
+                            <button type="submit" class="btn btn-primary">Save customer</button>
+
+
+                        </div>
+                        @*botones para el envio y cancelacion del formulario aqui termina*@
+
+
+                    </form>
+                    @*formulario para new customer aqui termina*@
+
+
+
+                </div>
+                @*Botones del formulaerio aqui empienza*@
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                </div>
+
+                @*Botones del formulaerio aqui termina*@
+            </div>
+        </div>
+    </div>
+    @*Aqui termina mi modal para agregar customer*@
+
+    <script src="~/lib/sweetalert2/sweetalert2.min.js"></script>
+    <script src="~/js/orders.js"></script>
+
+}
+@*Para los scripts aqui termina*@

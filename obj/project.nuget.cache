@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "8xjceJ4XWahNrJKW7PWWTwpAq8DmCdjuESeFGV9V740DEcRKzoc4pHwaz0TLcdaM8K0YdRfK0cobFHzn7EKs7w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\oscar\\OneDrive - Universidad Central del Este\\universidad ing. Software\\Septimo cuatrimestre\\programacion avanzada\\programas y mas\\Northwind.WebUI\\Northwind.WebUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\oscar\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.6\\microsoft.aspnetcore.mvc.razor.extensions.5.0.6.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\5.0.6\\microsoft.aspnetcore.mvc.razor.runtimecompilation.5.0.6.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.6\\microsoft.aspnetcore.razor.language.5.0.6.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.0.0\\microsoft.codeanalysis.analyzers.3.0.0.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\microsoft.codeanalysis.common\\3.8.0\\microsoft.codeanalysis.common.3.8.0.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\microsoft.codeanalysis.csharp\\3.8.0\\microsoft.codeanalysis.csharp.3.8.0.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\microsoft.codeanalysis.razor\\5.0.6\\microsoft.codeanalysis.razor.5.0.6.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\microsoft.extensions.dependencymodel\\5.0.0\\microsoft.extensions.dependencymodel.5.0.0.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\system.reflection.metadata\\5.0.0\\system.reflection.metadata.5.0.0.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.1\\system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+  ],
+  "logs": []
+}
